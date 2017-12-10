@@ -1,0 +1,97 @@
+/*final.css*/
+
+.titleContainer {
+    display:flex;
+    border-style: double;
+    justify-content: space-around;
+}
+
+#subtitle {
+    border-style: double;
+    justify-content: space-around;
+    display:flex;
+    margin-left: 150px;
+}
+
+.navigationContainer {
+    list-style-type: none;
+    margin:0;
+    margin-left:0px;
+    width: 150px;
+    padding:0;
+    border-style: double;
+    position: fixed;
+}
+
+li {
+    display: block;
+    border-style: double;
+    color:dimgrey;
+    padding:10px;
+}
+
+li:hover {
+    color:darkgrey
+}
+
+.widgetBoard {
+    display:flex;
+    justify-content: space-around;
+    border-style: double;
+    margin-left: 150px;
+    padding-top:0;
+    flex-wrap: wrap;
+}
+
+#loginWidget {
+    /*display:none;*/
+    order:1;
+    /*padding: 25px;*/
+    width: 300px;
+    height: 300px;
+    border-style: double;
+    margin: 10px;
+
+}
+
+#groupsWidget {
+    /*display: none;*/
+    order:4;
+    /*padding: 25px;*/
+    border-style: double;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+
+}
+
+#projectsWidget {
+    order:3;
+    /*display: none;*/
+    /*padding: 25px;*/
+    border-style: double;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
+
+#tasksWidget {
+    /*display: none;*/
+    margin: 10px;
+    order:2;
+    /*padding: 25px;*/
+    border-style: double;
+    width: 300px;
+    height: 300px;
+}
+
+singleGroup {
+
+}
+
+singleProject {
+
+}
+ singleTask {
+
+}

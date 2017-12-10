@@ -1,0 +1,28 @@
+Member
+    member_id INT autoincrement
+    email VARCHAR(200)
+    first_name VARCHAR(20)
+    last_name VARCHAR(20)
+    username VARCHAR(20)
+    password VARCHAR(20)
+
+Group
+    group_id INT
+    group_name VARCHAR(100)
+
+MemberShip
+    group_id INT , foreign key to Group
+    member_id INT , foreign key to Member
+
+Project
+    project_id INT
+    group_id INT , foreign key to Group
+    project_name VARCHAR(100), name of project
+    project_description TEXT
+
+Task
+    user_id INT
+    project_id INT
+    description TEXT
+    due_date DATE
+    color VARCHAR(20)
