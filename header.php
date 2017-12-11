@@ -16,31 +16,20 @@ session_start();
 
 <body>
     <header>
-        <nav>
             <div id="logInOutContainer">
-                <!--<ul>
-                  <li><a href="home.php">Home</a></li>
-                </ul>-->
-                <div class="nav-login">
                     <?php 
                         if(isset($_SESSION['username'])){
-                            echo '<form action="includes/logout.php" class="loginButton" id="login-button" method="POST">
+                            echo '<form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
                             <button type="submit" name="submit">Logout</button>
                             </form>';
                         }else{
-                            echo '<form action="includes/login.php" class="loginButton" id="login-button" method="POST"> 
+                            echo '<form action="includes/login.php" class="login-form" method="POST"> 
                             <input type="text" name="uid" placeholder="Username">
-                            <input type="text" name="pwd" placeholder="password">
+                            <input type="text" name="pwd" placeholder="Password">
                             <button type="submit" name="submit">Login</button>                  
-                               </form>';
-                            echo '<a href="signup.php" class="loginButton">Sign up</a>';
+                            </form>';
+                            echo'<a href="signup.php" id="signupBut" style="text-decoration:none">Sign Up</a>';
                         }
                     ?>
-                    
-                <!-- action links to php file to run method tells us we need to POST which is where the variables in the php are read from -->
-                  
-                </div>
             </div>
-
-        </nav>
     </header>
