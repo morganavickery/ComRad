@@ -1,6 +1,6 @@
 
     <div class="navigationContainer">
-        <a class='navButton'id="homeNav" onclick="homeClick()">ComRad</a>
+        <a class='navButton'id="homeNav" onclick="homeClick()"></a>
         <a class='navButton' id="taskNav" onclick="taskClick()">My Tasks</a>
         <a class='navButton' id="projNav" onclick="projClick()">My Projects</a>
     </div>
