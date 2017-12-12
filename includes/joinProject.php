@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 
     if(empty($pname)||empty($pword)){
        //this will tell us the error and we can use it later
-        header("Location: ../home.php?project=empty");
+        header("Location: ../home.html?project=empty");
         exit();
     }else{
         
@@ -31,14 +31,14 @@ if(isset($_POST['submit'])){
         $result=mysqli_query($conn,$sql);
         $resultCheck=mysqli_num_rows($result);
         if($resultCheck<1){
-            header("Location: ../home.php?project=projectDNE");
+            header("Location: ../home.html?project=projectDNE");
             exit();
         }else{
           if($row=mysqli_fetch_assoc($result)){
                 //de hashing password
                 $hashedPwdCheck=password_verify($pword, $row['project_password']);
                 if($hashedPwdCheck==false){
-                  header("Location:  ../home.php?projectjoin=error");
+                  header("Location:  ../home.html?projectjoin=error");
                   exit();
                 }else if($hashedPwdCheck==true){
                    //retreive project from database and get the project id
@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
 
                     if(mysqli_num_rows($result)>0){
 
-                        header("Location: ../home.php?projectjoin=alreadyMember");
+                        header("Location: ../home.html?projectjoin=alreadyMember");
                         exit();
                     }else{
 
@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
 
                         //insert into membership into database
                         mysqli_query($conn, $sql);
-                        header("Location: ../home.php?project=success");
+                        header("Location: ../home.html?project=success");
                         exit();
 
                     }
@@ -87,6 +87,6 @@ if(isset($_POST['submit'])){
 
 }else{
     
-    header("Location: ../home.php");
+    header("Location: ../home.html");
     exit();
 }

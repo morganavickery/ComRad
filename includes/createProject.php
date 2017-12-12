@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 
     if(empty($pname)||empty($pword)||empty($pdesc)){
        //this will tell us the error and we can use it later
-        header("Location: ../home.php?project=empty");
+        header("Location: ../home.html?project=empty");
         exit();
     }else{
         
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
         $result=mysqli_query($conn,$sql);
         $resultCheck=mysqli_num_rows($result);
         if($resultCheck>0){
-            header("Location: ../home.php?project=projectNameTaken");
+            header("Location: ../home.html?project=projectNameTaken");
             exit();
         }else{
             //now that we have all the checks we need to hash the password
@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
 
             //insert into membership into database
             mysqli_query($conn, $sql);
-            header("Location: ../home.php?project=success");
+            header("Location: ../home.html?project=success");
             exit();
 
         }
@@ -73,6 +73,6 @@ if(isset($_POST['submit'])){
 
 }else{
     
-    header("Location: ../home.php");
+    header("Location: ../home.html");
     exit();
 }

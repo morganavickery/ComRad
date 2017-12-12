@@ -12,21 +12,21 @@ if(isset($_POST['submit'])){
     //check for empty inputs
 
     if(empty($uid)||empty($pwd)){
-        header("Location:  ../index.php?login=empty");
+        header("Location:  ../index.html?login=empty");
         exit();
     }else{
       $sql="SELECT * FROM Users WHERE username='$uid'";
       $result=mysqli_query($conn,$sql);
       $resultCheck=mysqli_num_rows($result);
       if($resultCheck<1){
-        header("Location:  ../index.php?login=error");
+        header("Location:  ../index.html?login=error");
         exit();
       }else{
           if($row=mysqli_fetch_assoc($result)){
               //de hashing password
               $hashedPwdCheck=password_verify($pwd, $row['password']);
               if($hashedPwdCheck==false){
-                header("Location:  ../index.php?login=error");
+                header("Location:  ../index.html?login=error");
                 exit();
               }else if($hashedPwdCheck==true){
                   //log in the user here using session variable that we can use in all pages using session
@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
                   $_SESSION['email']=$row['email'];
                   $_SESSION['username']=$row['username'];
 
-                  header("Location:  ../home.php?login=success");
+                  header("Location:  ../home.html?login=success");
                   exit();
               }
           }

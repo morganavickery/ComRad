@@ -1,4 +1,18 @@
 
+    
+<html>
+
+<head>  
+    <title>ComRad</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="homeScript.js"></script>
+
+</head>
+
+<body>
+    
+    
     <div class="navigationContainer">
         <a class='navButton'id="homeNav" onclick="homeClick()"></a>
         <a class='navButton' id="overNav" onclick="overview()">Overview</a>
@@ -6,25 +20,30 @@
         <h3>Ben Corvera<br>Sarah Ganci<br>Morgan Vickery</h3>
     </div>
 
-    <?php 
-        include_once "header.php";
-    ?>
 
-    <?php
-        if(isset($_SESSION['username'])){
-            echo "<h1 id='title'> Welcome to ComRad, ".$_SESSION['first_name']."!</h1>";
-        }
-     ?>
+   <header>
+            <div class="logInOutContainer">
+            <!-- trying to removie php -->
+                 
+            <form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
+                <button type="submit" name="submit">Logout</button>
+            </form>
+            <form action="includes/login.php" class="login-form" method="POST"> 
+                <input type="text" name="uid" placeholder="Username">
+                <input type="text" name="pwd" placeholder="Password">
+                <button type="submit" name="submit">Login</button>                  
+            </form>
+            <a href="signup.html" id="signupBut" style="text-decoration:none">Sign Up</a>
+    
+                    
+            </div>
+    </header>
+
+   
 
     <h2 id='subtitle'>Delegate tasks and keep your group members accountable!</h2>
 
-<?php 
-    if(isset($_SESSION['username'])){
-        echo '';
-    } else {
-        echo '';
-    }
-?>
+
 
     <div class="widgetBoard">
         <!--ALL PROJECTS WIDGET-->
@@ -76,9 +95,7 @@
     </div>
 
 
-<?php
-    include_once "footer.php";
+    </body>
 
-?>
-
+</html>
 
