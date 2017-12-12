@@ -1,8 +1,9 @@
 
     <div class="navigationContainer">
         <a class='navButton'id="homeNav" onclick="homeClick()"></a>
-        <a class='navButton' id="taskNav" onclick="taskClick()">My Tasks</a>
-        <a class='navButton' id="projNav" onclick="projClick()">My Projects</a>
+        <a class='navButton' id="overNav" onclick="overview()">Overview</a>
+        <a class='navButton' id="deleNav" onclick="delegation()">Delegation</a>
+        <h3>Ben Corvera<br>Sarah Ganci<br>Morgan Vickery</h3>
     </div>
 
     <?php 
@@ -17,60 +18,61 @@
 
     <h2 id='subtitle'>Delegate tasks and keep your group members accountable!</h2>
 
+<?php 
+    if(isset($_SESSION['username'])){
+        echo '';
+    } else {
+        echo '';
+    }
+?>
+
     <div class="widgetBoard">
-    <!--WIDGETS-->
-        <div id="projectsWidget">
+        <!--ALL PROJECTS WIDGET-->
+        <div class="widget" id="allProjectsWidget">
+            <h2>My Projects</h3>
             <div class="widgetHeader">
-                <form action="includes/createProject.php" method="POST"> 
+                <button class="dropdown" id="createProjectDrop">
+                <form id="createProject" action="includes/createProject.php" method="POST"> 
                         Project Name: <input type="text" name="project_name" placeholder="project name"><br/>
                         Project Password: <input type="text" name="project_password" placeholder="project password"><br/>
                         Project Description: <input type="text" name="project_description" placeholder="description"><br/>
                         <button type="submit" name="submit">Create Project</button><br/>           
                 </form>
-                <form action="includes/joinProject.php" method="POST"> 
+                <button class="dropdown" id="joinProjectDrop">
+                <form id ="joinProject" action="includes/joinProject.php" method="POST"> 
                         Project Name: <input type="text" name="project_name" placeholder="project name"> <br/>
                         Project Password: <input type="text" name="project_password" placeholder="project password"><br/>
                         <button type="submit" name="submit">Join Project</button><br/>           
                 </form>
             </div>
-            <table>
-                <tr>
-                    <td>My Projects</td>
-                </tr>
-            </table>
+            <table><tr><td>PROJECT 1</td></tr><tr><td>PROJECT 2</td></tr></table>
+            <!--LIST OF ALL PROJECTS HERE-->
         </div>
-        <div id="tasksWidget">
-            <div class="widgetHeader">
 
+        <!--ALL TASKS WIDGET-->
+        <div class="widget" id="allTasksWidget">
+            <div class="widgetHeader"></div>
+            <table><tr><td>TASK 1</td></tr><tr><td>TASK 2</td></tr></table>
+            <!--LIST OF ALL MY TASKS HERE-->
+        </div>
+
+        <div class="widget" id="currentProjectWidget">
+        <h2>Current Project</h2>
+            <!--CURRENT TASKS WIDGET-->
+            <div class="widget" id="cpTasks">
+                <h3>Tasks</h3>
+                <div class="widgetHeader">
+                    <form class="dropdown" id="createTask">
+                        <!--FORM TO CREATE NEW TASK HERE-->
+                    </form>
+                </div>
+                <!--LIST OF CURRENT PROJECT TASKS HERE-->
             </div>
-            <table>
-                <tr>
-                    <td>My Tasks:</td>
-                </tr>
-            </table>
-        </div>
-        <div id="currentProjectWidget">
-            <div class="widgetHeader">
-
+            <!--CONTACTS WIDGET-->
+            <div class="widget" id="contacts">
+                <h3>Contacts</h3>
             </div>
-            <table>
-                <tr>
-                    <td>Current Project</td>
-                </tr>
-
-            </table>
         </div>
-        <div id="currentTaskWidget">
-            <div class="widgetHeader">
-
-            </div>
-            <table>
-                <tr>
-                    <td>Current Task</td>
-                </tr>
-            </table>
-        </div>
-
     </div>
 
 
@@ -79,21 +81,4 @@
 
 ?>
 
-<script>
-        function homeClick(){
-            document.getElementById("projectsWidget").style.display = "";
-            document.getElementById("tasksWidget").style.display = "";
-            document.getElementById("subtitle").style.color="red";
-        }
-        function taskClick(){
-            document.getElementById("projectsWidget").style.display = "none";
-            document.getElementById("tasksWidget").style.display = "";
-            document.getElementById("subtitle").style.color="blue";
 
-        }
-        function projClick(){
-            document.getElementById("projectsWidget").style.display = "";
-            document.getElementById("tasksWidget").style.display = "none";
-            document.getElementById("subtitle").style.color="green";
-        }
-</script>

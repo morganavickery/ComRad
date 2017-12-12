@@ -1,13 +1,75 @@
+/*WIDGETS*/
+.widgetBoard {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: auto;
+    border-style: double;
+    margin-left: 150px;
+}
+
+#allProjectsWidget {
+    grid-column: 1;
+    grid-row:1;
+}
+
+#currentProjectWidget{
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: fit-content;
+}
+
+#allTasksWidget {
+    grid-column: 1;
+    grid-row: 2;
+} 
+
+#cpTasks{
+    order:1;
+}
+
+#contacts{
+    order:2;
+}
+
+.widgetHeader {
+    border-style: double;
+}
+
+.widget{
+    margin:10px;
+    border-style: double;
+
+}
+
+.dropdown{
+    border-style: double;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*NAVIGATION*/
-
-#homeNav{
-        background-image: url("images/logo.sc");
-     background-repeat: no-repeat;  
-  background-position: 0% 0%;
-  background-size: 100% 100%;
-  height: 100px;
-    }
+#homeNav {
+    background-image: url("images/logo.sc");
+    background-repeat: no-repeat;  
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    height: 100px;
+}
 
 .navButton {
     display: block;
@@ -79,7 +141,15 @@ body {
 }
 
 /*LOGIN HEADER*/
-#logInOutContainer{
+#homeLogin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left:150px;
+    background-color:red;
+}
+
+.logInOutContainer{
     display: flex;
     flex-direction: row;
     background-color: #698fdb;
@@ -198,6 +268,7 @@ body {
 .signup-form input::placeholder {
   opacity: .85;
   font-style: italic;
+  color:darkgrey;
 }
 
 .signup-form button {
@@ -219,42 +290,5 @@ body {
     color: #3e439c;
 }
 
-/*NAVIGATION*/
 
 
-/*WIDGETS*/
-.widgetBoard {
-    display:flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    border-style: double;
-    margin-left: 150px;
-}
-
-.widgetHeader {
-    border-style: double;
-}
-
-#loginWidget {
-    order:1;
-    width: 300px;
-    height: 300px;
-    border-style: double;
-    margin: 10px;
-}
-
-#projectsWidget {
-    order:3;
-    border-style: double;
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-}
-
-#tasksWidget {
-    margin: 10px;
-    order:2;
-    border-style: double;
-    width: 300px;
-    height: 300px;
-} 
