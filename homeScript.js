@@ -1,16 +1,23 @@
-    function homeClick(){
-        document.getElementById("projectsWidget").style.display = "";
-        document.getElementById("tasksWidget").style.display = "";
-        document.getElementById("subtitle").style.color="red";
-    }
-    function taskClick(){
-        document.getElementById("projectsWidget").style.display = "none";
-        document.getElementById("tasksWidget").style.display = "";
-        document.getElementById("subtitle").style.color="blue";
+function cpUp(){
+   document.getElementById("createProjectForm").style.display = "none"; 
+}
 
-    }
-    function projClick(){
-        document.getElementById("projectsWidget").style.display = "";
-        document.getElementById("tasksWidget").style.display = "none";
-        document.getElementById("subtitle").style.color="green";
-    }
+function cpDown(){
+   document.getElementById("createProjectForm").style.display = "block"; 
+}
+
+function jpUp(){
+   document.getElementById("joinProjectForm").style.display = "none"; 
+}
+
+function jpDown(){
+   document.getElementById("joinProjectForm").style.display = "block"; 
+}
+
+function ctUp(){
+   document.getElementById("createTaskForm").style.display = "none"; 
+}
+
+function ctDown(){
+   document.getElementById("createTaskForm").style.display = "block"; 
+}
