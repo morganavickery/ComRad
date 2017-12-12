@@ -13,7 +13,7 @@
 <body>
     
     
-    <div class="navigationContainer">
+   <div class="navigationContainer">
         <a class='navButton'id="homeNav" onclick="homeClick()"></a>
         <a class='navButton' id="overNav" onclick="overview()">Overview</a>
         <a class='navButton' id="deleNav" onclick="delegation()">Delegation</a>
@@ -22,21 +22,21 @@
 
 
    <header>
-            <div class="logInOutContainer">
+        <div class="logInOutContainer">
             <!-- trying to removie php -->
                  
-            <form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
-                <button type="submit" name="submit">Logout</button>
-            </form>
-            <form action="includes/login.php" class="login-form" method="POST"> 
+             <form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
+                 <button type="submit" name="submit">Logout</button>
+             </form>
+             <form action="includes/login.php" class="login-form" method="POST"> 
                 <input type="text" name="uid" placeholder="Username">
                 <input type="text" name="pwd" placeholder="Password">
                 <button type="submit" name="submit">Login</button>                  
-            </form>
-            <a href="signup.html" id="signupBut" style="text-decoration:none">Sign Up</a>
-    
+             </form>
+             <a href="signup.php" id="signupBut" style="text-decoration:none">Sign Up</a>
+                            
                     
-            </div>
+       </div>
     </header>
 
    
@@ -45,43 +45,50 @@
 
 
 
-    <div class="widgetBoard">
+       <div class="widgetBoard">
         <!--ALL PROJECTS WIDGET-->
         <div class="widget" id="allProjectsWidget">
-            <h2>My Projects</h3>
-            <div class="widgetHeader">
-                <button class="dropdown" id="createProjectDrop">
-                <form id="createProject" action="includes/createProject.php" method="POST"> 
-                        Project Name: <input type="text" name="project_name" placeholder="project name"><br/>
-                        Project Password: <input type="text" name="project_password" placeholder="project password"><br/>
-                        Project Description: <input type="text" name="project_description" placeholder="description"><br/>
+            <div class="widgetHeader"><h3>My Projects</h3></div>
+                <div class="dropdown" id="createProjectDrop" >CREATE A PROJECT
+                    <button class="up" id="cpUp" onclick ="cpUp()">/\</button>
+                    <button class"down" id ="cpDown" onclick = "cpDown()">\/</button>
+                </div>
+                <form class = "widgetForm" id="createProjectForm" action="includes/createProject.php" method="POST"> 
+                        Name: <input type="text" name="project_name" placeholder="project name"><br/>
+                        Join Code: <input type="text" name="project_password" placeholder="join code"><br/>
+                        Description: <input type="text" name="project_description" placeholder="description"><br/>
                         <button type="submit" name="submit">Create Project</button><br/>           
                 </form>
-                <button class="dropdown" id="joinProjectDrop">
-                <form id ="joinProject" action="includes/joinProject.php" method="POST"> 
-                        Project Name: <input type="text" name="project_name" placeholder="project name"> <br/>
-                        Project Password: <input type="text" name="project_password" placeholder="project password"><br/>
+                <div class="dropdown" id="joinProjectDrop" >JOIN A PROJECT
+                    <button class="up" id="jpUp" onclick ="jpUp()">/\</button>
+                    <button class"down" id ="jpDown" onclick = "jpDown()">\/</button>
+                </div>
+                <form class = "widgetForm" id ="joinProjectForm" action="includes/joinProject.php" method="POST"> 
+                        Name: <input type="text" name="project_name" placeholder="project name"> <br/>
+                        Join Code: <input type="text" name="project_password" placeholder="join code"><br/>
                         <button type="submit" name="submit">Join Project</button><br/>           
                 </form>
-            </div>
             <table><tr><td>PROJECT 1</td></tr><tr><td>PROJECT 2</td></tr></table>
             <!--LIST OF ALL PROJECTS HERE-->
         </div>
 
         <!--ALL TASKS WIDGET-->
         <div class="widget" id="allTasksWidget">
-            <div class="widgetHeader"></div>
+            <h3>My Tasks</h3>
             <table><tr><td>TASK 1</td></tr><tr><td>TASK 2</td></tr></table>
             <!--LIST OF ALL MY TASKS HERE-->
         </div>
 
         <div class="widget" id="currentProjectWidget">
-        <h2>Current Project</h2>
+        <h3>Current Project</h3>
             <!--CURRENT TASKS WIDGET-->
             <div class="widget" id="cpTasks">
-                <h3>Tasks</h3>
-                <div class="widgetHeader">
-                    <form class="dropdown" id="createTask">
+                <div class="widgetHeader"><h3>Tasks</h3></div>
+                    <div class="dropdown" id="createTaskDrop" >CREATE A TASK
+                        <button class="up" id="ctUp" onclick ="ctUp()">/\</button>
+                        <button class"down" id ="ctDown" onclick = "ctDown()">\/</button>
+                    </div>
+                    <form class = "widgetForm" id="createTaskForm">
                         <!--FORM TO CREATE NEW TASK HERE-->
                     </form>
                 </div>
@@ -93,7 +100,6 @@
             </div>
         </div>
     </div>
-
 
     </body>
 
