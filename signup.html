@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 
 
 <html>
 
-<head>  
+<head>
     <title>ComRad</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="homeScript.js"></script>
 
@@ -14,41 +13,41 @@
 
 <body>
     <header>
-            <div class="logInOutContainer">
+        <div class="logInOutContainer">
             <!-- trying to removie php -->
-                 
+
             <form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
                 <button type="submit" name="submit">Logout</button>
             </form>
-            <form action="includes/login.php" class="login-form" method="POST"> 
+            <form action="includes/login.php" class="login-form" method="POST">
                 <input type="text" name="uid" placeholder="Username">
                 <input type="text" name="pwd" placeholder="Password">
-                <button type="submit" name="submit">Login</button>                  
+                <button type="submit" name="submit">Login</button>
             </form>
             <a href="signup.html" id="signupBut" style="text-decoration:none">Sign Up</a>
-    
-                    
-            </div>
+
+
+        </div>
     </header>
 
-        <div class="main-wrapper">
-            <h2>SIGN UP</h2>
-            <!-- temporarily took out from form:  -->
-            <!-- added ids for more to use in js -->
-            <form class="signup-form" action="includes/signupToDb.php" method="POST"  >
-                <input id="signup_first" type-"text" name="first" placeholder="First Name">
-                <input id="signup_last" type-"text" name="last" placeholder="Last Name">
-                <input type-"signup_email" name="email" placeholder="E-mail">
-                <input type-"signup_uid" name="uid" placeholder="Username">
-                <input type-"signup_pwd" name="pwd" placeholder="Password">
-                <!-- potentially could add phone number -->
-                <!-- added onclick to this submit button -->
-                <button type="submit" name="submit" >SUBMIT</button>
-            </form>
-        </div>
+    <div class="main-wrapper">
+        <h2>SIGN UP</h2>
+        <!-- temporarily took out from form:  -->
+        <!-- added ids for more to use in js -->
+        <form class="signup-form" action="includes/signupToDb.php" method="POST">
+            <input id="signup_first" type- "text" name="first" placeholder="First Name">
+            <input id="signup_last" type- "text" name="last" placeholder="Last Name">
+            <input type- "signup_email" name="email" placeholder="E-mail">
+            <input type- "signup_uid" name="uid" placeholder="Username">
+            <input type- "signup_pwd" name="pwd" placeholder="Password">
+            <!-- potentially could add phone number -->
+            <!-- added onclick to this submit button -->
+            <button type="submit" name="submit">SUBMIT</button>
+        </form>
+    </div>
 
-        <div id="signup_status">TEST</div>
+    <div id="signup_status">TEST</div>
 
-        </body>
+</body>
 
 </html>
