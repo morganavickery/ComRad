@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ComRad</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="homeScript.js"></script>
+    <script src="./scripts/createProject.js"></script>
+    <script src="./scripts/joinProject.js"></script>
+    <script src="./scripts/echo.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="datestyle.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+<!--CREATE DATE PICKER-->
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div class="navigationContainer">
+        <a class='navButton' id="homeNav" onclick="homeClick()"></a>
+        <a href="home.html" class='navButton' id="overNav">Manage Projects and Tasks</a>
+        <a href="mapAPI.html" class='navButton' id="meetupNav">Manage Meetups</a>
+        <h3>Ben Corvera<br>Sarah Ganci<br>Morgan Vickery</h3>
+    </div>
+
+
+    <header>
+        <div class="logInOutContainer">
+            <!-- trying to removie php -->
+            <form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
+                <button type="submit" name="submit">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <!--<h2 id='subtitle'>Delegate tasks and keep your group members accountable!</h2>-->
+    <h2 id='welcome_user'></h2>
+    <h1>Create a Meetup!</h1>
+
+    <div class="widgetBoard">
+        <div id="chooseDate">
+            <h2>Select the date of your meetup!</h2>
+            <p>Date: <input type="text" id="datepicker"></p>
+        </div>
+        <div id="chooseMap">
+            <h2>Select the location of your meetup!</h2>
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+        </div>
+        <!--<button id="submit location and date">SUBMIT</button>-->
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_clIa1ef9K_AfCf4-U7sHAI1STxfB_tw&callback=myMap"></script>
+
+    <!--OUR API KEY (DO NOT DELETE!) AIzaSyD_clIa1ef9K_AfCf4-U7sHAI1STxfB_tw -->
+
+</body>
+
+</html>
