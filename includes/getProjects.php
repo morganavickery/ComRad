@@ -1,0 +1,30 @@
+<?php
+session_start();
+
+include 'dbconnect.php';
+
+
+
+$uid=$_SESSION['user_id'];
+
+// $sql="SELECT P.project_name, P.project_description FROM Users U, Memberships M, Project P WHERE U.user_id= $uid and U.user_id=M.user_id and M.project_id=P.project_id";
+
+
+$result = mysqli_query($conn, $sql);
+
+$cnt = 0;
+
+while ($r = mysqli_fetch_assoc($result)) {
+$row[$cnt] = $r;
+$cnt++;
+
+}
+
+// echo $cnt;
+$json = json_encode($row);
+echo $json;
+
+
+
+//$row = mysqli_free_result($result); ////mysqli_fetch_row($result); //echo json_encode($row);
+?>

@@ -394,3 +394,49 @@ body {
     background-color:#84E0E0;
     color: #3e439c;
 }
+
+
+/* below is the css for the project buttons */
+/* .button {
+    border-top: 1px solid #52768c;
+    background: #6f72b5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3e429c), to(#6f72b5));
+    background: -webkit-linear-gradient(top, #3e429c, #6f72b5);
+    background: -moz-linear-gradient(top, #3e429c, #6f72b5);
+    background: -ms-linear-gradient(top, #3e429c, #6f72b5);
+    background: -o-linear-gradient(top, #3e429c, #6f72b5);
+    padding: 17px 34px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 16px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    }
+ .button:hover {
+    border-top-color: #3e429c;
+    background: #3e429c;
+    color: #ccc;
+    }
+ .button:active {
+    border-top-color: #1e25a1;
+    background: #1e25a1;
+    } */
+
+    
+#projectDisplay {
+    /* margin: 150px 50px;*/
+    display: flex;
+    flex-direction: column;
+    color: blue;
+    }
+    
+    .projectButton{
+    padding: 10px;
+}
