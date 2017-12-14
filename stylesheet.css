@@ -1,14 +1,23 @@
-/*MEETUPS*/
+/* MEETUPS*/
 .chooseDate{
     grid-column: 1;
-}
+    grid-row: 2;
+} 
 
 .chooseMap {
     grid-column: 2;
+    grid-row: 2;
+}
+
+#chooseProject{
+    grid-column-start: 1;
+    grid-column-end:3;
+    grid-row:1;
+    align-self: center;
 }
 
 .widgetBoard h2{
-text-align: center;
+    text-align: center;
     color: white;
     text-shadow: 1px 1px #3E9C9C;
     font-family: 'lucida Grande';
@@ -28,7 +37,7 @@ text-align: center;
     color: #3E9C9C;
     background-color: #84E0E0;
     width:max-content;
-    height:max-content
+    height:max-content;
     font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     border-radius:5px;
     font-size: 10pt;
@@ -59,8 +68,8 @@ text-align: center;
     color: white;
     text-shadow: 1px 1px #3E9C9C;
     font-family: 'lucida Grande';
-    border-color:#3E9C9C
-    border: double
+    border-color:#3E9C9C;
+    border: double;
 }
 
 
