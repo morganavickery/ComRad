@@ -457,3 +457,33 @@ body {
     padding: 10px;
    
 }
+
+/* added css for making tasks display in a pretty table*/
+
+#displayAllTasks {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#displayAllTasks td, #displayAllTasks th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#displayAllTasks tr{
+    background-color: #a9b6cc;
+}
+#displayAllTasks tr:nth-child(even){background-color: #c6d6ef;}
+#displayAllTasks tr:nth-child(odd){background-color: #a9b6cc;}
+
+
+#displayAllTasks th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3e439c ;
+    color: white;
+    text-shadow: none;
+}
+/* end of adds for displaying table */
