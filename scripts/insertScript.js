@@ -28,15 +28,15 @@ $(document).ready(function(){
                 if(result=="success"){
                     
                     clearInput();
-                    $("#signup_status").text("You have successfully signed up!");
+                    alert("You have successfully signed up!");
                 }else if(result=="invalid"){
-                    $("#signup_status").text("The text in your first or last name is invalid.");
+                    alert("The text in your first or last name is invalid.");
                 }else if(result=="email"){
-                    $("#signup_status").text("The email you have entered is not valid.");
+                    alert("The email you have entered is not valid.");
                 }else if(result=="user_taken"){
-                    $("#signup_status").text("The username you have entered has already been taken.");
+                    alert("The username you have entered has already been taken.");
                 }else if(result=="empty"){
-                    $("#signup_status").text("One or more of the fields are empty");
+                    alert("One or more of the fields are empty");
                 }
 
               
