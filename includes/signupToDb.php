@@ -1,7 +1,16 @@
 <?php
-// first check to see if submit is selected
+/**
+ * php return keys:
+ * empty -->empty field
+ * invalid -->invalid first or last name
+ * email --> invalid email
+ * user_taken--> username is takne
+ * success -->signup was a success and user info inputted into db
+ */
 
-if(isset($_POST['submit'])){
+
+
+// if(isset($_POST['submit'])){
 
     include_once "dbconnect.php";
     // make sure to turn to text
@@ -18,27 +27,22 @@ if(isset($_POST['submit'])){
     //check for empty fields
 
     if(empty($first)||empty($last)||empty($email)||empty($uid)||empty($pwd)){
-       //this will tell us the error and we can use it later
-        header("Location: ../signup.html?signup=empty");
-        exit();
+       echo "empty";
     }else{
         //check if input characters are valid
         if(!preg_match("/^[a-zA-Z]*$/",$first)||!preg_match("/^[a-zA-Z]*$/",$last)){
-            header("Location: ../signup.html?signup=invalid");
-            exit();
+            echo "invalid";
         }else{
             //check if email is valid
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                header("Location: ../signup.html?signup=email");
-                exit();
+                echo "email";
             }else{
                 //now check if existing users with that uid
                 $sql="SELECT * FROM Users WHERE username='$uid'";
                 $result=mysqli_query($conn,$sql);
                 $resultCheck=mysqli_num_rows($result);
                 if($resultCheck>0){
-                    header("Location: ../signup.html?signup=usertaken");
-                    exit();
+                    echo "user_taken";
                 }else{
                     //now that we have all the checks we need to hash the password
                     //hashing the pwd
@@ -49,8 +53,9 @@ if(isset($_POST['submit'])){
                     $sql="INSERT INTO `Users`(`first_name`, `last_name`, `email`, `username`, `password`) VALUES ('$first', '$last','$email','$uid','$hashedPwd');";
                     //insert into database
                     mysqli_query($conn, $sql);
-                    header("Location: ../signup.html?signup=success");
-                    exit();
+                    echo "success";
+                 
+                    
 
                 }
 
@@ -59,8 +64,3 @@ if(isset($_POST['submit'])){
     }
 
 
-}else{
-    // if submit not actually selected send back to signup page
-    header("Location: ../signup.html");
-    exit();
-}
