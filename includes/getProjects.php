@@ -7,7 +7,7 @@ include 'dbconnect.php';
 
 $uid=$_SESSION['user_id'];
 
-$sql="SELECT P.project_name, P.project_description FROM Users U, Memberships M, Project P WHERE U.user_id= $uid and U.user_id=M.user_id and M.project_id=P.project_id";
+$sql="SELECT P.project_name, P.project_description, P.project_id FROM Users U, Memberships M, Project P WHERE U.user_id= $uid and U.user_id=M.user_id and M.project_id=P.project_id";
 
 
 $result = mysqli_query($conn, $sql);
