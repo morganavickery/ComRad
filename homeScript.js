@@ -23,13 +23,12 @@ function ctDown(){
 }
 
 
-
-$(document).ready(function () {
-    $('[data-toggle="popover"]').popover({
-        placement: 'top',
-        trigger: 'hover'
-    });
-});
+// $(document).ready(function () {
+//     $('[data-toggle="popover"]').popover({
+//         placement: 'top',
+//         trigger: 'hover'
+//     });
+// });
 
 
 
@@ -43,20 +42,15 @@ function displayProjects() {
         dataType: "json",
 
     }).done(function (json) {
-        console.log(json);
-        json = JSON.parse(json);
         jsonlength = json.length;
         for (var i = 0; i < jsonlength; i++) {
             console.log(json[i].project_name);
-            projectsName = json[i].project_description;
+            projectsName = json[i].project_name;
             var btn = document.createElement("BUTTON"); // Create a <button> element
             var t = document.createTextNode(projectsName); // Create a text node
             btn.setAttribute("class", "projectButton")
             btn.appendChild(t); // Append the text to <button>
             $("#projectDisplay").append(btn);
-
-
-
 
         }
 
@@ -64,6 +58,8 @@ function displayProjects() {
     });
 
 };
+
+
 
 
 displayProjects();
