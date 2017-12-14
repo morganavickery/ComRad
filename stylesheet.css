@@ -458,27 +458,28 @@ body {
    
 }
 
-/* added css for making tasks display in a pretty table*/
-
-#displayAllTasks {
+/* added css for making tasks and contacts display in a pretty table*/
+#displayAllTasks , #displayContacts{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    text-shadow:none;
+    font-size: 12px;
 }
 
-#displayAllTasks td, #displayAllTasks th {
+#displayAllTasks td, #displayAllTasks th ,#displayContacts td ,#displayContacts th{
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#displayAllTasks tr{
+#displayAllTasks tr, #displayContacts tr{
     background-color: #a9b6cc;
 }
-#displayAllTasks tr:nth-child(even){background-color: #c6d6ef;}
-#displayAllTasks tr:nth-child(odd){background-color: #a9b6cc;}
+#displayAllTasks tr:nth-child(even), #displayContacts tr:nth-child(even){background-color: #c6d6ef;}
+#displayAllTasks tr:nth-child(odd), #displayContacts tr:nth-child(odd){background-color: #a9b6cc;}
 
 
-#displayAllTasks th {
+#displayAllTasks th , #displayContacts th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -486,4 +487,5 @@ body {
     color: white;
     text-shadow: none;
 }
+
 /* end of adds for displaying table */
