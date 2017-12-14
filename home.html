@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="homeScript.js"></script>
+    <script src="./scripts/createProject.js"></script>
+    <script src="./scripts/joinProject.js"></script>
 
 </head>
 
@@ -28,13 +30,7 @@
              <form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
                  <button type="submit" name="submit">Logout</button>
              </form>
-             <form action="includes/login.php" class="login-form" method="POST"> 
-                <input type="text" name="uid" placeholder="Username">
-                <input type="text" name="pwd" placeholder="Password">
-                <button type="submit" name="submit">Login</button>                  
-             </form>
-             <a href="signup.php" id="signupBut" style="text-decoration:none">Sign Up</a>
-                            
+
                     
        </div>
     </header>
@@ -53,20 +49,23 @@
                     <button class="up" id="cpUp" onclick ="cpUp()">/\</button>
                     <button class"down" id ="cpDown" onclick = "cpDown()">\/</button>
                 </div>
-                <form class = "widgetForm" id="createProjectForm" action="includes/createProject.php" method="POST"> 
-                        Name: <input type="text" name="project_name" placeholder="project name"><br/>
-                        Join Code: <input type="text" name="project_password" placeholder="join code"><br/>
-                        Description: <input type="text" name="project_description" placeholder="description"><br/>
-                        <button type="submit" name="submit">Create Project</button><br/>           
+                <!-- below i am going to link create project form to ajax -->
+                <!-- removed: action="includes/createProject.php" method="POST" -->
+                <form class = "widgetForm" id="createProjectForm" > 
+                        Name: <input id="project_name" type="text" name="project_name" placeholder="project name"><br/>
+                        Join Code: <input id="project_pwd" type="text" name="project_password" placeholder="join code"><br/>
+                        Description: <input id="project_desc" type="text" name="project_description" placeholder="description"><br/>
+                        <button id="submit_project" type="submit" name="submit">Create Project</button><br/>           
                 </form>
                 <div class="dropdown" id="joinProjectDrop" >JOIN A PROJECT
                     <button class="up" id="jpUp" onclick ="jpUp()">/\</button>
                     <button class"down" id ="jpDown" onclick = "jpDown()">\/</button>
                 </div>
-                <form class = "widgetForm" id ="joinProjectForm" action="includes/joinProject.php" method="POST"> 
-                        Name: <input type="text" name="project_name" placeholder="project name"> <br/>
-                        Join Code: <input type="text" name="project_password" placeholder="join code"><br/>
-                        <button type="submit" name="submit">Join Project</button><br/>           
+                <!-- removed: action="includes/joinProject.php" method="POST" -->
+                <form class = "widgetForm" id ="joinProjectForm" > 
+                        Name: <input id="join_pname" type="text" name="project_name" placeholder="project name"> <br/>
+                        Join Code: <input id="join_pwd" type="text" name="project_password" placeholder="join code"><br/>
+                        <button id="submit_join_project" type="submit" name="submit">Join Project</button><br/>           
                 </form>
             <table><tr><td>PROJECT 1</td></tr><tr><td>PROJECT 2</td></tr></table>
             <!--LIST OF ALL PROJECTS HERE-->
