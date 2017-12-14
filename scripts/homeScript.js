@@ -33,6 +33,8 @@ function ctDown(){
 
 
 function displayProjects() {
+
+    $("#projectDisplay").empty();
     var projectsName;
     var projectsText;
 

@@ -31,6 +31,10 @@ $(document).ready(function(){
                     alert("You are already a member of this project.");
                 }
 
+                
+                displayProjects();
+
+
               
             }
         });
