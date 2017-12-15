@@ -28,6 +28,9 @@ $(document).ready(function(){
                     $("#createTaskForm :input").each(function(){
                         $(this).val('');
                     });
+
+                    //display tasks
+                    displayCPTask();
                 }else if(result=="select_project"){
                     alert("You must select a project first.");
                 }else if (result=="empty"){
@@ -43,7 +46,28 @@ $(document).ready(function(){
 
 
 
+function displayCPTask(){
 
+    $.ajax({
+        type:"POST",
+        url:"./includes/echoPID.php",
+        data: "",
+        cache:false,
+        success: function(result){    
+            console.log(result);
+            // alert(result);
+            if(result=="select_project"){
+                
+            }else {
+                displayProjectTasks(result);
+            }
+            
+        
+        }
+    });   
+
+
+}
 
 
 

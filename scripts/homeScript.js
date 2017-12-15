@@ -38,9 +38,9 @@ function displayProjects() {
 
 
             //print tests
-            console.log(c.project_name);
-            console.log(c.project_id);
-            console.log(c.project_password);
+            // console.log(c.project_name);
+            // console.log(c.project_id);
+            // console.log(c.project_password);
 
             
             projectsName = c.project_name;
@@ -56,7 +56,7 @@ function displayProjects() {
                 
 
                 id = c.project_id;
-                console.log(id);
+                // console.log(id);
                 displayProjectTasks(id);
                 displayMembersofProjects(id);
                 // $("#current_project").innerHTML("Project Name: "+projectName);
@@ -76,11 +76,11 @@ function displayProjects() {
 
 
 function displayProjectTasks(pid) {
-    console.log("were in business: pid:"+pid);
+    // console.log("were in business: pid:"+pid);
 
     var id = 'project_id=' + pid;
 
-    console.log(id);
+    // console.log(id);
 
 
     $.ajax({
@@ -90,7 +90,6 @@ function displayProjectTasks(pid) {
         cache: false,
 
     }).done(function (json2) {
-        console.log(json2);
 
         $("#displaySelectedProjectTasks").empty();
 
@@ -109,16 +108,16 @@ function displayProjectTasks(pid) {
         $("#displaySelectedProjectTasks").append(row1);
 
         json2 = JSON.parse(json2);
-        console.log(json2);
+        // console.log(json2);
         jsonlength2 = json2.length;
-        console.log("json length is= " + json2.length);
+        // console.log("json length is= " + json2.length);
         //T.due_date, T.task_description, U.first_name, U.last_name
-        console.log(json2[0]);
+        // console.log(json2[0]);
         for (var i = 0; i < jsonlength2; i++) {
-            console.log(json2[i].due_date);
-            console.log(json2[i].task_description);
-            console.log(json2[i].first_name);
-            console.log(json2[i].last_name);
+            // console.log(json2[i].due_date);
+            // console.log(json2[i].task_description);
+            // console.log(json2[i].first_name);
+            // console.log(json2[i].last_name);
 
             var task = json2[i].task_description;
             var date = json2[i].due_date;
@@ -182,21 +181,21 @@ function displayMembersofProjects(pid) {
         $("#displayContacts").append(row1);
         
         json3 = JSON.parse(json3);
-        console.log(json3);
+        // console.log(json3);
         jsonlength3 = json3.length;
-        console.log("json length is= " + json3.length);
+        // console.log("json length is= " + json3.length);
         //T.due_date, T.task_description, U.first_name, 
         for (var i = 0; i < jsonlength3; i++) {
-            console.log(json3[i].first_name);
-            console.log(json3[i].last_name);
-            console.log(json3[i].email);
+            // console.log(json3[i].first_name);
+            // console.log(json3[i].last_name);
+            // console.log(json3[i].email);
 
 
             var email = json3[i].email;
             var name = json3[i].first_name + " " + json3[i].last_name;
             var username=json3[i].username;
 
-            console.log(username);
+            // console.log(username);
 
             var row = document.createElement("tr");
             var td_name = document.createElement('td');
@@ -220,7 +219,7 @@ function displayMembersofProjects(pid) {
 
             // var option= document.createElement("option");
             // option.innerHTML(username);
-            console.log(username);
+            // console.log(username);
             $("#members").append(
                 $('<option></option>').val(username).html(username)
             );
