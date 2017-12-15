@@ -22,14 +22,14 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
     <!--CREATE DATE PICKER-->
-    <script>
-        // $(function () {
-        //     $("#datepicker").datepicker();
-        // });
+    <!-- <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
         var meetupDate;
         var meetupLocation;
         var meetupProj;
-    </script>
+    </script> -->
 
 
 </head>
@@ -40,11 +40,7 @@
         <a class='navButton' id="homeNav" onclick="homeClick()"></a>
         <a href="home.html" class='navButton' id="overNav">Manage Projects and Tasks</a>
         <a href="mapAPI.html" class='navButton' id="meetupNav">Manage Meetups</a>
-        <h3>Ben Corvera
-            <br>Sarah Ganci
-            <br>Morgan Vickery</h3>
     </div>
-
 
     <header>
         <div class="logInOutContainer">
@@ -60,22 +56,11 @@
         <h1>Create a Meetup!</h1>
     </div>
 
-    <div class="widgetBoard">
-
-
-
-        <select class="dropdown" id="chooseProject">
-            <!-- <button class="dropbtn">What project is this meetup for?</button>
-            <div id="selectedProject"></div>
-            <div class="dropdown-content">
-                <!-- TO BE POPULATED WITH PROJECTS -->
-            <!-- </div> -->
-        </select>
-
-
-
-
-
+    <div class="widgetBoardII">
+        <div id="projectSection">
+            <h2>Select your project!</h2>
+            <select class="dropdown" id="chooseProject"></select>
+        </div>
         <div id="chooseDate">
             <h2>Select the date of your meetup!</h2>
             <p>
@@ -87,15 +72,15 @@
             <div id="googleMap" style="width:100%;height:400px;"></div>
         </div>
         <div id="submitBlock">
-            <button id="submitMeetup" onclick="submitMeetup()">Submit My Meetup</button>                
+            <button id="submitMeetup" onclick="submitMeetup()">Submit My Meetup</button>
         </div>
-        <div id="overallMeetups">
-            <h3>My Meetups</h3>
+        <div class="widget" id="overallMeetups">
+            <h2>My Meetups</h2>
             <table id="displayAllMeetups">
                 <tr>
-                    <th>Due Date</th>
                     <th>Project Name</th>
-                    <th>Task</th>
+                    <th>Date</th>
+                    <th>Location</th>
                 </tr>
             </table>
         </div>
