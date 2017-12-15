@@ -338,7 +338,7 @@
     height: 30px;
     text-align: center;
     text-shadow: 1px 2px white;
-    font-family: 'Lucida Grande';
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     font-size:14pt;
     border-radius:5px;
     align-self: center;
@@ -712,7 +712,7 @@ body {
 
 
 /* added css for making tasks and contacts display in a pretty table*/
-#displayAllTasks , #displayContacts, #displaySelectedProjectTasks{
+#displayAllTasks , #displayContacts, #displaySelectedProjectTasks, #displayAllMeetups {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -720,21 +720,22 @@ body {
     font-size: 12px;
 }
 
-#displayAllTasks td, #displayAllTasks th ,
+#displayAllTasks td, #displayAllTasks th , 
 #displayContacts td ,#displayContacts th,
-#displaySelectedProjectTasks td, #displaySelectedProjectTasks th{
+#displaySelectedProjectTasks td, #displaySelectedProjectTasks th,
+#displayAllMeetups td, #displayAllMeetups th{
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#displayAllTasks tr, #displayContacts tr, #displaySelectedProjectTasks tr{
+#displayAllTasks tr, #displayContacts tr, #displaySelectedProjectTasks tr, #displayAllMeetups tr{
     background-color: #a9b6cc;
 }
-#displayAllTasks tr:nth-child(even), #displayContacts tr:nth-child(even), #displaySelectedProjectTasks tr:nth-child(even) {background-color: #c6d6ef;}
-#displayAllTasks tr:nth-child(odd), #displayContacts tr:nth-child(odd),#displaySelectedProjectTasks tr:nth-child(odd){background-color: #a9b6cc;}
+#displayAllTasks tr:nth-child(even), #displayContacts tr:nth-child(even), #displaySelectedProjectTasks tr:nth-child(even), #displayAllMeetups tr:nth-child(even) {background-color: #c6d6ef;}
+#displayAllTasks tr:nth-child(odd), #displayContacts tr:nth-child(odd),#displaySelectedProjectTasks tr:nth-child(odd), #displayAllMeetups tr:nth-child(odd){background-color: #a9b6cc;}
 
 
-#displayAllTasks th , #displayContacts th, #displaySelectedProjectTasks th {
+#displayAllTasks th , #displayContacts th, #displaySelectedProjectTasks th, #displayAllMeetups th  {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
