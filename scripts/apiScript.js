@@ -1,52 +1,55 @@
-//@ sarah: 
-//"addressStr" = text of address of map
-//date is a normal input field w/ id = "datepicker"
-//project dropdown "targetProject" holds string of name of project to sa
+var targetProject;
+var addressStr;
+
+function submitMeetup(){
+    var meetupDate = document.getElementById('datepicker').value;    
+    console.log(targetProject);
+    console.log(addressStr);
+    console.log(meetupDate)
+    // PROJECT ID AND ADDRESSSTR ARE ALREADY SAVED
+}
+
+function retrieveProject(id, name) {
+    console.log("HELLOOO");
+    console.log("ID: " + id);
+    targetProject = id;
+
+    var listItem = document.createElement('button');
+    var text = document.createTextNode(name);
+    listItem.appendChild(text);
+    $("#selectedProject").empty();
+    $("#selectedProject").append(listItem);
+}
 
 function populateDropdown() {
-    var projectsName;
-    var projectsText;
-
     $.ajax({
-        url: 'includes/getProjects.php',
+        url: './includes/getProjects.php',
         data: "",
         dataType: "json",
 
     }).done(function (json) {
         jsonlength = json.length;
-        for (var i = 0; i < jsonlength; i++) {
-            console.log(json[i].project_name);
-            projectsName = json[i].project_name;
+        json.forEach(function (c) {
+            console.log("~~~~~~~~~~~~~~~~~~");
+            console.log(c.project_id);
+            console.log(c.project_name);
+            var name = c.project_name;
             var listItem = document.createElement('button');
-            var text = document.createTextNode(projectsName);
+            var text = document.createTextNode(name);
             listItem.appendChild(text);
-            listItem.setAttribute("class", "ddo");
-            // $(".ddo").click(function () {
-            //     console.log("ENTER SELECTPROJECT()");
-            //     console.log("clicked button:" + projectsName);
-            // });
-            // listItem.setAttribute("onclick", "selectProject()");
-            listItem.onclick = function() {
-                selectProject(text);
-            };
-    
-            // listItem.onclick = 'selectProject()';
-            $(".dropdown-content").append(listItem);
-        }
-    });
-};
-populateDropdown();
 
-// var targetProject;
-function selectProject(name) {
-    console.log("ENTER SELECTPROJECT()");
-    console.log(name);
-    // console.log("clicked button:" + projectsName);
+            listItem.onclick = function () {
+                retrieveProject(c.project_id, c.project_name);
+            }
+
+            $(".dropdown-content").append(listItem);
+        })
+    });
 }
+populateDropdown();
 
 //GOOGLE MAPS API
 var selectedLocation;
-var addressStr;
 var marker;
 var geocoder;
 var infowindow;
@@ -137,3 +140,4 @@ function deleteMarkers() {
     clearMarkers();
     markers = [];
 }
+
