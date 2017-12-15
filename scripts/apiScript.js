@@ -1,11 +1,17 @@
-var targetProject;
+$(document).ready(function () {
+    populateDropdown();
+
+});
+
+// var targetProject;
 var addressStr;
 
-function submitMeetup(){
-    var meetupDate = document.getElementById('datepicker').value;    
-    console.log(targetProject);
+function submitMeetup() {
+    var meetupDate = document.getElementById('datepicker').value;
+    var targetProject = $("#chooseProject").val();
     console.log(addressStr);
     console.log(meetupDate)
+    console.log(targetProject);
     // PROJECT ID AND ADDRESSSTR ARE ALREADY SAVED
 }
 
@@ -33,20 +39,22 @@ function populateDropdown() {
             console.log("~~~~~~~~~~~~~~~~~~");
             console.log(c.project_id);
             console.log(c.project_name);
-            var name = c.project_name;
-            var listItem = document.createElement('button');
-            var text = document.createTextNode(name);
-            listItem.appendChild(text);
-
-            listItem.onclick = function () {
-                retrieveProject(c.project_id, c.project_name);
-            }
-
-            $(".dropdown-content").append(listItem);
+            // var name = c.project_name;
+            // var listItem = document.createElement('button');
+            // var text = document.createTextNode(name);
+            // listItem.appendChild(text);
+            // console.log("1");
+            // listItem.onclick = function () {
+            //     retrieveProject(c.project_id, c.project_name);
+            // }
+            console.log("2");
+            $("#chooseProject").append(
+                $('<option></option>').val(c.project_name).html(c.project_name)
+            );
+            console.log("3");
         })
     });
 }
-populateDropdown();
 
 //GOOGLE MAPS API
 var selectedLocation;
