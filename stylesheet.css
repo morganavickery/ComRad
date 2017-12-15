@@ -338,7 +338,7 @@
     height: 30px;
     text-align: center;
     text-shadow: 1px 2px white;
-    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-family: 'Lucida Grande';
     font-size:14pt;
     border-radius:5px;
     align-self: center;
@@ -502,7 +502,7 @@
 
 .titleBox{
     text-align: center;
-    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-family: 'Lucida Grande';
     text-shadow: 1px 2px #84E0E0;
     color: #3e439c;
     font-size:20pt;
@@ -551,7 +551,7 @@ body {
     width:70px;
     align-self:center;
     height: 20px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   font-family: 'Lucida Grande';
     text-align:center;
 }
 
@@ -564,7 +564,7 @@ body {
     width:70px;
     align-self:center;
     height: 20px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   font-family: 'Lucida Grande';
     text-align:center;
 }
 
@@ -574,7 +574,7 @@ body {
     background-color: #84E0E0;
     width:100px;
     height: 20px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   font-family: 'Lucida Grande';
     border-radius:5px;
     font-size: 12pt;
     margin-top:5pt;
@@ -625,7 +625,7 @@ body {
 
 .main-wrapper h1{
     text-align: center;
-    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-family: 'Lucida Grande';
     text-shadow: 1px 2px #84E0E0;
     color: #3e439c;
     font-size:45pt;
@@ -634,7 +634,7 @@ body {
 
 .main-wrapper h2 {
     text-align: center;
-    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-family: 'Lucida Grande';
     text-shadow: 4px 4px #3e439c;
     color: #84E0E0;
     font-size:28pt;
@@ -644,7 +644,7 @@ body {
 
 .main-wrapper h3{
     text-align: center;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   font-family: 'Lucida Grande';
     text-shadow: 1px 2px #84E0E0;
     color: #3e439c;
     font-size:20pt;
@@ -669,7 +669,7 @@ body {
     border: 1px solid #3e439c;
     background-color: #698fdb;
     color: #3e439c;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   font-family: 'Lucida Grande';
     opacity: 1.0;
     border-radius:5px;
     font-size: 1.2em;
@@ -689,7 +689,7 @@ body {
     height:30px;
     align-self: center;
     text-shadow: 1px 2px #698fdb;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   font-family: 'Lucida Grande';
     font-size:14pt;
     margin-bottom: 50px;
     border-radius:5px;
