@@ -1,19 +1,222 @@
-/* MEETUPS*/
-.chooseDate{
-    grid-column: 1;
-    grid-row: 2;
-} 
 
-.chooseMap {
-    grid-column: 2;
-    grid-row: 2;
+.widgetBoard {
+    display:grid;
+    grid-template-columns: 300px 250px 300px;
+    grid-template-rows: 300px 250px 300px;
+    margin-left: 150px;
+    margin-right: 10px;
 }
 
-#chooseProject{
+#overallMeetups{
+    grid-row-start: 1;
+    grid-row-end:3;
+    grid-column:1;
+    /* border-style:double; */
+    vertical-align: center;
+}
+
+.dropdown {
+    /* border-style:double; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-row:1;
+    grid-column:2;
+    /* width:100%;
+    height:100%; */
+    vertical-align: center;
+    
+}
+
+#chooseDate{
+    /* grid-row-start:0;
+    grid-row-end:1;
+    grid-column-start:0;
+    grid-column-end:1; */
+    grid-column: 2;
+    grid-row: 2;
+    /* margin-left: 10px;
+    padding: 5px; */
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    /* border-style:double; */
+    vertical-align: center;
+    
+    
+} 
+
+#submitBlock{
+    /* border-style:double; */
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3;        
+}
+
+#submitMeetup{
+    /* border-style:double;     */
+    background-color:#3e439c;
+    /* border: 1px solid #84E0E0; */
+    color: #84E0E0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-shadow: 1px 2px #698fdb;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-size:14pt;
+    border-radius:5px;
+    align-self: center;
+    /* grid-row-start:2;
+    grid-row-end:3;
+    grid-column-start:0;
+    grid-column-end:2; */
+}
+
+#chooseMap {
+    /* border-style:double; */
+    /* grid-row-start:0;
+    grid-row-end:2;
+    grid-column-start:1;
+    grid-column-end:2; */
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin-right: 10px;
+    vertical-align: center;
+    
+}
+
+.dropbtn {
+    background-color: #698fdb;
+    color: #3e439c;
+    font-size: 14px;
+    border: 1px solid #3e439c;
+    cursor: pointer;
+    width:auto;
+    height: auto;
+    align-self: center;
+    border-radius:5px;
+    text-align: center;
+     
+    /* grid-row-start:1;
+    grid-row-end:2; */
+    /* grid-column-start:0;
+    grid-column-end:1; */
+    /* grid-column: 1;
+    grid-row: 2; */
+}
+
+#selectedProject{
+    color: white;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background-color:#3e439c;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top:100px;
+    align-self: center;
+}
+
+.dropdown-content button {
+    color: white;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background-color:#3e439c;
+
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top:100px;
+    align-self: center;
+}
+
+.dropdown-content button:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:active .dropdown-content {
+    display: block;
+}
+
+
+/* .dropdown:hover .dropbtn {
+    background-color: #3e439c;
+    border-color: #698fdb;
+    color: #698fdb;
+} */
+
+/* MEETUPS */
+
+#submitMeetup{
+    /* border-style:double;     */
+    background-color:#3e439c;
+    /* border: 1px solid #84E0E0; */
+    color: #84E0E0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    text-shadow: 1px 2px #698fdb;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-size:14pt;
+    border-radius:5px;
+    align-self: center;
+    margin-top: 20px;
+    /* grid-row-start:2;
+    grid-row-end:3;
+    grid-column-start:0;
+    grid-column-end:2; */
     grid-column-start: 1;
     grid-column-end:3;
-    grid-row:1;
+    grid-row: 3;
+}
+
+#datepicker::placeholder {
+    color:#3e439c;
+    text-align: center;  
+}
+
+#chooseDate input{
+    border-color: 1px solid #3e439c;
+    color: #3e439c;
+    background-color: #698fdb;
+    width:100px;
+    height: 20px;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    border-radius:5px;
+    font-size: 12pt;
     align-self: center;
+
+}
+
+#googleMap{
+    border: solid 5px #3e439c;
+    margin-right: 10px;
+}
+
+#chooseDate p {
+    text-shadow: 1px 2px #84E0E0;
+    color: #3e439c;
+    align-self: center;
+    text-align: center;
 }
 
 .widgetBoard h2{
@@ -37,8 +240,7 @@
     color: #3E9C9C;
     background-color: #84E0E0;
     width:max-content;
-    /* height:max-content; */
-    height: 20px;
+    height:max-content;
     font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     border-radius:5px;
     font-size: 10pt;
@@ -46,14 +248,14 @@
 }
 
 .widgetForm button{
- border-color: #3E9C9C;
+    border-color: #3E9C9C;
     color: #84E0E0;
     background-color: #3E9C9C;
     border-radius:5px;
     width:70px;
     align-self:center;
     height: 20px;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     text-align:center;
     font-size:12pt;
 }
@@ -61,16 +263,11 @@
 .widget{
     background-image: url("images/widgetTexture.jpg");
     background-size: cover;
-    /*background: #3e429c;
-    background: -moz-linear-gradient(top, #3e429c 0%, #698fdb 100%);
-    background: -webkit-linear-gradient(top, #3e429c 0%,#698fdb 100%); 
-    background: linear-gradient(to bottom, #3e429c 0%,#698fdb 100%); */
     background-size: 100% 100%;
     color: white;
-    text-shadow: 1px 1px #3E9C9C;
+    text-shadow: 1px 1px #84E0E0;
     font-family: 'lucida Grande';
     border-color:#3E9C9C;
-    border: double;
 }
 
 
@@ -89,44 +286,6 @@
 
 #createTaskForm {
     display: none;
-}
-
-.dropdown button{
-    align-self: flex-end;
-    float:right;
-}
-
-.dropdown {
-    margin:5px;
-    width: auto;
-    display: flex;
-    background: #3e429c;
-    background: -webkit-gradient(linear, left top, left bottom, from(#3E9C9C), to(#3e429c));
-    background: -webkit-linear-gradient(top, #84e0e0, #3e429c);
-    background: -moz-linear-gradient(top, #84e0e0, #3e429c);
-    background: -ms-linear-gradient(top, #84e0e0, #3e429c);
-    background: -o-linear-gradient(top, #84e0e0, #3e429c);
-    padding: 6px 12px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    box-shadow: rgba(0,0,0,1) 0 1px 0;
-    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-    color: white;
-    font-size: 12px;
-    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-    text-decoration: none;
-    vertical-align: middle;
-}
-
-.widgetBoard {
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-auto-rows: auto;
-    border-style: double;
-    margin-left: 150px;
 }
 
 #allProjectsWidget {
@@ -155,19 +314,13 @@
 }
 
 .widgetHeader {
-    border-style: double;
     color:transparent;
 }
 
 .widget{
     margin:10px;
-    border-style: double;
 }
 
-.dropdown{
-    border-style: double;
-
-}
 
 /*NAVIGATION*/
 #homeNav {
@@ -180,7 +333,6 @@
 
 .navButton {
     display: block;
-    /*border-style: double;*/
     padding:10px;
     border-top: 1px solid #000000;
     background: #698fdb;
@@ -219,7 +371,6 @@
     margin:0;
     width: 150px;
     padding:0;
-    border-style: double;
     position: fixed;
     overflow: auto;
     height: 100%;
@@ -228,12 +379,20 @@
 /*GENERAL*/
 #title {
     margin-left: 150px;
-    /*border-style: double;*/
     padding:0;
 }
 
+.titleBox{
+    margin-left: 150px;
+    text-align: center;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    text-shadow: 1px 2px #84E0E0;
+    color: #3e439c;
+    font-size:20pt;
+    padding-top: 50px;
+}
+
 #subtitle {
-    /*border-style: double;*/
     justify-content: space-around;
     display:flex;
     margin-left: 150px;
@@ -253,11 +412,12 @@ body {
     flex-direction: row;
     justify-content: space-around;
     margin-left:150px;
-    background-color:red;
+    /* background-color:red; */
 }
 
 .logInOutContainer{
     display: flex;
+    height: 50px;
     flex-direction: row;
     background-color: #698fdb;
     justify-content: space-around;
@@ -265,7 +425,8 @@ body {
 }
 
 #signupBut{
-   border-color: #3E9C9C;
+    font-size:12pt;
+    border-color: #84E0E0;
     color: #84E0E0;
     background-color: #3E9C9C;
     border-radius:5px;
@@ -274,7 +435,6 @@ body {
     height: 20px;
    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     text-align:center;
-    font-size:12pt;
 }
 
 .login-form button {
@@ -303,7 +463,7 @@ body {
     margin-bottom:5pt;
 }
 
-#signupBut button:active {
+#signupBut:active {
     border-color:  1px solid #3E9C9C;
     color: #3E9C9C;
     background-color: #84E0E0;
@@ -311,11 +471,14 @@ body {
 
 #logoutContainer{
     margin-left:150px;
+    align-content: center;    
 }
 
 #logoutContainer button {
     align-self: center;
-    margin-top: 5px;
+    /* margin-top: 5px; */
+    vertical-align: middle
+
 }
 
 .login-form input::placeholder {
@@ -329,36 +492,34 @@ body {
     background-color: #84E0E0;
 }
 
-
-
-
 /*SIGN IN PAGE*/
 .main-wrapper {
-    background-image: url("images/homeFists.jpeg");
-    margin: 0;
+    background-image: url("images/homeFists.jpeg") ;
+    /* background-position: center center; */
     background-size: cover;
-    height: 100%;
-    width: 100%;
-    border-top:25px #3e439c inset;
-    border-bottom:25px #3e439c inset;
-    margin-right: 5px;
+    /* height: 100%; */
+    /* margin-top: 50px; */
+    height: 500px;
+    background-repeat: no-repeat; 
+    border-top:25px #3e439c solid;
+    border-bottom:25px #3e439c solid;
 }
 
-.main-wrapper h2{
+.main-wrapper h1{
     text-align: center;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     text-shadow: 1px 2px #84E0E0;
     color: #3e439c;
-    font-size:20pt;
+    font-size:45pt;
     padding-top:50px;
 }
 
-.main-wrapper h1 {
+.main-wrapper h2 {
     text-align: center;
-   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     text-shadow: 4px 4px #3e439c;
     color: #84E0E0;
-    font-size:44pt;
+    font-size:28pt;
     padding-top:50px;
     font: bold;
 }
@@ -420,40 +581,6 @@ body {
     background-color:#84E0E0;
     color: #3e439c;
 }
-
-
-/* below is the css for the project buttons */
-/* .button {
-    border-top: 1px solid #52768c;
-    background: #6f72b5;
-    background: -webkit-gradient(linear, left top, left bottom, from(#3e429c), to(#6f72b5));
-    background: -webkit-linear-gradient(top, #3e429c, #6f72b5);
-    background: -moz-linear-gradient(top, #3e429c, #6f72b5);
-    background: -ms-linear-gradient(top, #3e429c, #6f72b5);
-    background: -o-linear-gradient(top, #3e429c, #6f72b5);
-    padding: 17px 34px;
-    -webkit-border-radius: 18px;
-    -moz-border-radius: 18px;
-    border-radius: 18px;
-    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    box-shadow: rgba(0,0,0,1) 0 1px 0;
-    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-    color: white;
-    font-size: 16px;
-    font-family: Helvetica, Arial, Sans-Serif;
-    text-decoration: none;
-    vertical-align: middle;
-    }
- .button:hover {
-    border-top-color: #3e429c;
-    background: #3e429c;
-    color: #ccc;
-    }
- .button:active {
-    border-top-color: #1e25a1;
-    background: #1e25a1;
-    } */
 
     
 #projectDisplay {
