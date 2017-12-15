@@ -12,7 +12,7 @@
 
 
     $sql=
-    "SELECT distinct U.user_id, U.first_name, U.last_name, U.email
+    "SELECT distinct U.user_id, U.first_name, U.last_name, U.email, U.username
     FROM Users U, Memberships M, Project P
     WHERE $pid = M.project_id and M.user_id = U.user_id
     order by U.first_name ASC, U.last_name ASC";

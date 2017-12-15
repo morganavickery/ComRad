@@ -37,7 +37,8 @@
     color: #3E9C9C;
     background-color: #84E0E0;
     width:max-content;
-    height:max-content;
+    /* height:max-content; */
+    height: 20px;
     font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
     border-radius:5px;
     font-size: 10pt;
@@ -500,3 +501,8 @@ body {
 }
 
 /* end of adds for displaying table */
+ 
+input{
+    height: 30px;
+    padding: 10px;
+}

@@ -162,16 +162,22 @@ function displayMembersofProjects(pid) {
     }).done(function (json3) {
 
         $("#displayContacts").empty();
+        $("#members").empty();
 
         var row1= document.createElement("tr");
         var th_name=document.createElement('th');
         var th_email= document.createElement('th');
+        var th_user=document.createElement("th");
 
         th_name.innerHTML="Member";
         th_email.innerHTML="Email";
+        th_user.innerHTML="Username";
+       
         
         row1.appendChild(th_name);
+        row1.appendChild(th_user);
         row1.appendChild(th_email);
+        
         
         $("#displayContacts").append(row1);
         
@@ -188,21 +194,36 @@ function displayMembersofProjects(pid) {
 
             var email = json3[i].email;
             var name = json3[i].first_name + " " + json3[i].last_name;
+            var username=json3[i].username;
+
+            console.log(username);
 
             var row = document.createElement("tr");
             var td_name = document.createElement('td');
             var td_email = document.createElement('td');
+            var td_user= document.createElement('td');
 
             td_name.innerHTML = name;
             td_email.innerHTML = email;
+            td_user.innerHTML=username;
 
 
             row.appendChild(td_name);
+            row.appendChild(td_user);
             row.appendChild(td_email);
 
 
             $("#displayContacts").append(row);
 
+
+            // below will get users usernames and append them onto the select list
+
+            // var option= document.createElement("option");
+            // option.innerHTML(username);
+            console.log(username);
+            $("#members").append(
+                $('<option></option>').val(username).html(username)
+            );
         }
 
 

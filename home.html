@@ -9,6 +9,7 @@
     <script src="./scripts/joinProject.js"></script>
     <script src="./scripts/echo.js"></script>
     <script src="./scripts/alltasks.js"></script>
+    <script src="./scripts/createTask.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -38,7 +39,7 @@
 
 
     <div class="titleBox">
-        <h2 id='subtitle'>Delegate tasks and keep your group members accountable!</h2>
+        <!-- <h2 id='subtitle'>Delegate tasks and keep your group members accountable!</h2> -->
         <h2 id='welcome_user'></h2>
     </div>
 
@@ -123,7 +124,18 @@
                     <button class "down" id="ctDown" onclick="ctDown()">\/</button>
                 </div>
                 <form class="widgetForm" id="createTaskForm">
-                    <!--FORM TO CREATE NEW TASK HERE-->
+                   
+                    Select a Member:
+                    <select id="members" name="members">    
+                    </select>
+                    <br/>
+                    Due Date:
+                    <input id="task_date" type="date" name="task_data" placeholder="Date">
+                    <br/>
+                    Task:
+                    <input id="task_desc" type="text" name="task_desc" placeholder="Description">
+                    
+                    <button id="submit_task"  type="button" name="submit">Create Task</button>
                 </form>
             </div>
             <!--LIST OF CURRENT PROJECT TASKS HERE-->
@@ -133,8 +145,8 @@
                 <!--     below is the table where contacts are going to be added                 -->
                 <table id="displayContacts">
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Member</th>
+                        <th>Username</th>
                         <th>Email</th>
                     </tr>
                 </table>
