@@ -1,161 +1,94 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+
+
+
+    <!-- DO NOT REORDER SCRIPTS!! -->
     <title>ComRad</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./scripts/apiScript.js"></script>
     <script src="./scripts/homeScript.js"></script>
     <script src="./scripts/createProject.js"></script>
     <script src="./scripts/joinProject.js"></script>
     <script src="./scripts/echo.js"></script>
-    <script src="./scripts/alltasks.js"></script>
-    <script src="./scripts/createTask.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="datestyle.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <!--CREATE DATE PICKER-->
+    <!-- <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+        var meetupDate;
+        var meetupLocation;
+        var meetupProj;
+    </script> -->
+
 
 </head>
 
 <body>
+
     <div class="navigationContainer">
         <a class='navButton' id="homeNav" onclick="homeClick()"></a>
-        <a class='navButton' id="overNav" onclick="overview()">Manage Projects and Tasks</a>
-        <a href="mapAPI.html" class='navButton' id="meetupNav" onclick="meetups()">Manage Meetups</a>
-        <h3>Ben Corvera
-            <br>Sarah Ganci
-            <br>Morgan Vickery</h3>
+        <a href="home.html" class='navButton' id="overNav">Manage Projects and Tasks</a>
+        <a href="mapAPI.html" class='navButton' id="meetupNav">Manage Meetups</a>
     </div>
-
 
     <header>
         <div class="logInOutContainer">
             <!-- trying to removie php -->
-
             <form action="includes/logout.php" class="login-form" id="logoutContainer" method="POST">
                 <button type="submit" name="submit">Logout</button>
             </form>
-
-
         </div>
     </header>
 
-
     <div class="titleBox">
-        <!-- <h2 id='subtitle'>Delegate tasks and keep your group members accountable!</h2> -->
         <h2 id='welcome_user'></h2>
+        <h1>Create a Meetup!</h1>
     </div>
 
-
-
-
-    <div class="widgetBoard">
-        <!--ALL PROJECTS WIDGET-->
-        <div class="widget" id="allProjectsWidget">
-            <div class="widgetHeader">
-                <h3>My Projects</h3>
-            </div>
-            <div class="dropdown" id="createProjectDrop">CREATE A PROJECT
-                <button class="up" id="cpUp" onclick="cpUp()">/\</button>
-                <button class "down" id="cpDown" onclick="cpDown()">\/</button>
-            </div>
-            <!-- below i am going to link create project form to ajax -->
-            <!-- removed: action="includes/createProject.php" method="POST" -->
-            <form class="widgetForm" id="createProjectForm">
-                Name:
-                <input id="project_name" type="text" name="project_name" placeholder="project name">
-                <br/> Join Code:
-                <input id="project_pwd" type="text" name="project_password" placeholder="join code">
-                <br/> Description:
-                <input id="project_desc" type="text" name="project_description" placeholder="description">
-                <br/>
-                <button id="submit_project" type="submit" name="submit">Create Project</button>
-                <br/>
-            </form>
-            <div class="dropdown" id="joinProjectDrop">JOIN A PROJECT
-                <button class="up" id="jpUp" onclick="jpUp()">/\</button>
-                <button class "down" id="jpDown" onclick="jpDown()">\/</button>
-            </div>
-            <!-- removed: action="includes/joinProject.php" method="POST" -->
-            <form class="widgetForm" id="joinProjectForm">
-                Name:
-                <input id="join_pname" type="text" name="project_name" placeholder="project name">
-                <br/> Join Code:
-                <input id="join_pwd" type="text" name="project_password" placeholder="join code">
-                <br/>
-                <button id="submit_join_project" type="submit" name="submit">Join Project</button>
-                <br/>
-            </form>
-
-            <div id="projectDisplay"></div>
-
+    <div class="widgetBoardII">
+        <div id="projectSection">
+            <h2>Select your project!</h2>
+            <select class="dropdown" id="chooseProject"></select>
         </div>
-
-        <!--ALL TASKS WIDGET-->
-        <div class="widget" id="allTasksWidget">
-            <h3>My Tasks</h3>
-            <!--LIST OF ALL MY TASKS HERE-->
-            <!-- added table -->
-            <table id="displayAllTasks">
+        <div id="chooseDate">
+            <h2>Select the date of your meetup!</h2>
+            <p>
+                <input type="date" id="datepicker" placeholder="Date">
+            </p>
+        </div>
+        <div id="chooseMap">
+            <h2>Select the location of your meetup!</h2>
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+        </div>
+        <div id="submitBlock">
+            <button id="submitMeetup" onclick="submitMeetup()">Submit My Meetup</button>
+        </div>
+        <div class="widget" id="overallMeetups">
+            <h2>My Meetups</h2>
+            <table id="displayAllMeetups">
                 <tr>
-                    <th>Due Date</th>
                     <th>Project Name</th>
-                    <th>Task</th>
-                    
+                    <th>Date</th>
+                    <th>Location</th>
                 </tr>
             </table>
         </div>
 
-        <div class="widget" id="currentProjectWidget">
-            <h3 id="current_project">Current Project</h3>
-            <h3 id="join_code"></h3>
-            <!--CURRENT TASKS WIDGET-->
-            <div class="widget" id="cpTasks">
-                <div class="widgetHeader">
-                    <h3>Tasks</h3>
-                    <table id="displaySelectedProjectTasks">
-                        <tr>
-                            <th>Due Date</th>
-                            <th>Member</th>
-                            <th>Task</th>
-                        </tr>
-                    </table>
-                    
-                </div>
-                <div class="dropdown" id="createTaskDrop">CREATE A TASK
-                    <button class="up" id="ctUp" onclick="ctUp()">/\</button>
-                    <button class "down" id="ctDown" onclick="ctDown()">\/</button>
-                </div>
-                <form class="widgetForm" id="createTaskForm">
-                   
-                    Select a Member:
-                    <select id="members" name="members">    
-                    </select>
-                    <br/>
-                    Due Date:
-                    <input id="task_date" type="date" name="task_data" placeholder="Date">
-                    <br/>
-                    Task:
-                    <input id="task_desc" type="text" name="task_desc" placeholder="Description">
-                    
-                    <button id="submit_task"  type="button" name="submit">Create Task</button>
-                </form>
-            </div>
-            <!--LIST OF CURRENT PROJECT TASKS HERE-->
-            <!--CONTACTS WIDGET-->
-            <div class="widget" id="contacts">
-                <h3>Contacts</h3>
-                <!--     below is the table where contacts are going to be added                 -->
-                <table id="displayContacts">
-                    <tr>
-                        <th>Member</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-
     </div>
-    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_clIa1ef9K_AfCf4-U7sHAI1STxfB_tw&callback=myMap"></script>
+
+    <!--OUR API KEY (DO NOT DELETE!) AIzaSyD_clIa1ef9K_AfCf4-U7sHAI1STxfB_tw -->
 
 </body>
 
