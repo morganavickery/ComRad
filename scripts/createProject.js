@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#submit_project").click(function(){
-        alert("clicked");
+       
         var name=$("#project_name").val();
         var code= $("#project_pwd").val();
         var desc=$("#project_desc").val();
