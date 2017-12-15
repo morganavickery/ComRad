@@ -148,7 +148,7 @@ function displayProjectTasks(pid) {
 };
 
 function displayMembersofProjects(pid) {
-    console.log("were in business: displayMembers pid:"+pid);
+    // console.log("were in business: displayMembers pid:"+pid);
 
 
     var ID = 'project_id=' + pid;
