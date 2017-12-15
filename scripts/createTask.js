@@ -29,8 +29,10 @@ $(document).ready(function(){
                         $(this).val('');
                     });
 
-                    //display tasks
+                    //display current project tasks
                     displayCPTask();
+                    // display all my tasks
+                    displayTasks();
                 }else if(result=="select_project"){
                     alert("You must select a project first.");
                 }else if (result=="empty"){

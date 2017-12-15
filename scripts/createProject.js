@@ -37,7 +37,7 @@ $(document).ready(function(){
                 }else if(result=="empty"){
                      alert("One or more of the fields is empty.");
                 }
-
+               
                 displayProjects();
             }
         });
