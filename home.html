@@ -97,16 +97,26 @@
                     <th>Due Date</th>
                     <th>Project Name</th>
                     <th>Task</th>
+                    
                 </tr>
             </table>
         </div>
 
         <div class="widget" id="currentProjectWidget">
-            <h3>Current Project</h3>
+            <h3 id="current_project">Current Project</h3>
+            <h3 id="join_code"></h3>
             <!--CURRENT TASKS WIDGET-->
             <div class="widget" id="cpTasks">
                 <div class="widgetHeader">
                     <h3>Tasks</h3>
+                    <table id="displaySelectedProjectTasks">
+                        <tr>
+                            <th>Due Date</th>
+                            <th>Member</th>
+                            <th>Task</th>
+                        </tr>
+                    </table>
+                    
                 </div>
                 <div class="dropdown" id="createTaskDrop">CREATE A TASK
                     <button class="up" id="ctUp" onclick="ctUp()">/\</button>

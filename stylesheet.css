@@ -468,7 +468,7 @@ body {
 }
 
 /* added css for making tasks and contacts display in a pretty table*/
-#displayAllTasks , #displayContacts{
+#displayAllTasks , #displayContacts, #displaySelectedProjectTasks{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -476,19 +476,21 @@ body {
     font-size: 12px;
 }
 
-#displayAllTasks td, #displayAllTasks th ,#displayContacts td ,#displayContacts th{
+#displayAllTasks td, #displayAllTasks th ,
+#displayContacts td ,#displayContacts th,
+#displaySelectedProjectTasks td, #displaySelectedProjectTasks th{
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#displayAllTasks tr, #displayContacts tr{
+#displayAllTasks tr, #displayContacts tr, #displaySelectedProjectTasks tr{
     background-color: #a9b6cc;
 }
-#displayAllTasks tr:nth-child(even), #displayContacts tr:nth-child(even){background-color: #c6d6ef;}
-#displayAllTasks tr:nth-child(odd), #displayContacts tr:nth-child(odd){background-color: #a9b6cc;}
+#displayAllTasks tr:nth-child(even), #displayContacts tr:nth-child(even), #displaySelectedProjectTasks tr:nth-child(even) {background-color: #c6d6ef;}
+#displayAllTasks tr:nth-child(odd), #displayContacts tr:nth-child(odd),#displaySelectedProjectTasks tr:nth-child(odd){background-color: #a9b6cc;}
 
 
-#displayAllTasks th , #displayContacts th {
+#displayAllTasks th , #displayContacts th, #displaySelectedProjectTasks th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

@@ -6,7 +6,27 @@ function displayTasks() {
         dataType: "json",
 
     }).done(function (json) {
+
+        $("#displayAllTasks").empty();
+
+
         jsonlength = json.length;
+
+        //this should do the title
+        var row1= document.createElement("tr");
+        var th_pname=document.createElement('th');
+        var th_date= document.createElement('th');
+        var th_task= document.createElement('th');
+
+        th_pname.innerHTML="Project Name";
+        th_date.innerHTML="Due Date";
+        th_task.innerHTML="Task";
+        
+        row1.appendChild(th_date);
+        row1.appendChild(th_pname);
+        row1.appendChild(th_task);
+        $("#displayAllTasks").append(row1);
+
         for (var i = 0; i < jsonlength; i++) {
             console.log(json[i].project_name);
 
